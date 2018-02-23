@@ -12,11 +12,15 @@ namespace Pharmacy.WebForms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ClassPrescription loadData = new ClassPrescription();
-            loadData.LoadPrescriptionData(GridViewPrescriptions);
+            if(!IsPostBack)
+            {
+                ClassPrescription loadData = new ClassPrescription();
+                loadData.LoadPrescriptionData(GridViewPrescriptions);
+            }            
 
             btnUpdate.CssClass = "btn btn-warning disabled";
             btnView.CssClass = "btn btn-primary disabled";
+            btnDelete.CssClass = "btn btn-danger disabled";
         }
 
         protected void GridViewPrescriptions_SelectedIndexChanged(object sender, EventArgs e)
@@ -27,12 +31,25 @@ namespace Pharmacy.WebForms
 
             btnUpdate.CssClass = "btn btn-warning enabled";
             btnView.CssClass = "btn btn-primary enabled";
+            btnDelete.CssClass = "btn btn-danger enabled";
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             string vPresID = GridViewPrescriptions.SelectedRow.Cells[1].Text;
             Response.Redirect("UpdatePrescriptionPage.aspx?vPresId="+vPresID);
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            ClassPrescription searchPrescription = new ClassPrescription();
+            searchPrescription.SearchPrescription(txSearch, ddSearch, GridViewPrescriptions);
+        }
+
+        protected void btnDeletePrescriptionSubmit_Click(object sender, EventArgs e)
+        {
+            ClassPrescription deletePrescription = new ClassPrescription();
+            deletePrescription.DeletePrescription(this);
         }
     }
 }

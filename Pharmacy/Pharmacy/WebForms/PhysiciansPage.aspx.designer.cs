@@ -13,22 +13,31 @@ namespace Pharmacy.WebForms {
     public partial class PhysiciansPage {
         
         /// <summary>
-        /// GridViewPhysicians control.
+        /// ddPhysicianSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        public global::System.Web.UI.WebControls.GridView GridViewPhysicians;
+        protected global::System.Web.UI.WebControls.DropDownList ddPhysicianSearch;
         
         /// <summary>
-        /// SqlDataSourcePhysicians control.
+        /// txPhysicianSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourcePhysicians;
+        protected global::System.Web.UI.WebControls.TextBox txPhysicianSearch;
+        
+        /// <summary>
+        /// btnPhysicianSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPhysicianSearch;
         
         /// <summary>
         /// btnAdd control.
@@ -65,6 +74,24 @@ namespace Pharmacy.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnAddress;
+        
+        /// <summary>
+        /// GridViewPhysicians control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        public global::System.Web.UI.WebControls.GridView GridViewPhysicians;
+        
+        /// <summary>
+        /// SqlDataSourcePhysicians control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourcePhysicians;
         
         /// <summary>
         /// lbl1 control.

@@ -13,22 +13,31 @@ namespace Pharmacy.WebForms {
     public partial class CustomersPage {
         
         /// <summary>
-        /// GridViewCustomers control.
+        /// ddCustomerSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        public global::System.Web.UI.WebControls.GridView GridViewCustomers;
+        protected global::System.Web.UI.WebControls.DropDownList ddCustomerSearch;
         
         /// <summary>
-        /// SqlDataSourceCustomer control.
+        /// txCustomerSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceCustomer;
+        protected global::System.Web.UI.WebControls.TextBox txCustomerSearch;
+        
+        /// <summary>
+        /// btnCustomerSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCustomerSearch;
         
         /// <summary>
         /// btnAdd control.
@@ -65,6 +74,24 @@ namespace Pharmacy.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnAddress;
+        
+        /// <summary>
+        /// GridViewCustomers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        public global::System.Web.UI.WebControls.GridView GridViewCustomers;
+        
+        /// <summary>
+        /// SqlDataSourceCustomer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceCustomer;
         
         /// <summary>
         /// lbl1 control.

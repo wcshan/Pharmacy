@@ -2,10 +2,12 @@
 using Pharmacy.WebForms;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace Pharmacy.Classes
@@ -145,6 +147,40 @@ namespace Pharmacy.Classes
                     DB.closeConnection();
                     ScriptManager.RegisterClientScriptBlock(deleteDrug, this.GetType(), "SweetAlert", "swal('Success!', 'Drug details Deleted', 'success').then(function(){window.location='DrugsPage.aspx';})", true);
                 } 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+        }
+
+        public void SearchDrug(System.Web.UI.WebControls.TextBox txSearch, DropDownList ddSearch, GridView GridViewSearch)
+        {
+            try
+            {
+                DatabaseConnection DB = new DatabaseConnection();
+                DB.openConnection();
+                string selectQuery = null;
+                string vSearchValue = '%' + txSearch.Text + '%';
+
+                switch (ddSearch.SelectedIndex)
+                {
+                    case 0:
+                        selectQuery = "SELECT * FROM DrugsAndMedication WHERE drugId LIKE '" + vSearchValue + "'";
+                        break;
+
+                    case 1:
+                        selectQuery = "SELECT * FROM DrugsAndMedication WHERE drugName LIKE '" + vSearchValue + "'";
+                        break;
+                }
+                var dataAdapter = new SqlDataAdapter(selectQuery, DatabaseConnection.dbConnection);
+                var DS = new DataSet();
+                dataAdapter.Fill(DS);
+                GridViewSearch.DataSourceID = null;
+                GridViewSearch.DataSource = DS.Tables[0];
+                GridViewSearch.DataBind();
+                DB.closeConnection();
+                txSearch.Text = "";
             }
             catch (Exception ex)
             {

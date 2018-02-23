@@ -4,13 +4,24 @@
 
 <asp:Content ID="body" ContentPlaceHolderID="contentbody" runat="server">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12" style="height: 10px"></div>
+        <div class="row" style="margin-bottom:10px; margin-top:20px">
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <asp:DropDownList CssClass="btn-success" runat="server" ID="ddSearch" Width="100px">
+                        <asp:ListItem>ID</asp:ListItem>
+                        <asp:ListItem>Name</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:TextBox CssClass="form-control" runat="server" ID="txSearch" placeholder="Search Text" BackColor="#eaeaea"></asp:TextBox>
+                    <asp:Button runat="server" CssClass="btn-success" Text="   Search   " ID="btnSearch" OnClick="btnSearch_Click" />
+                </div>
+            </div>
+            <div class="col-sm-6 text-right">
+                <asp:LinkButton CssClass="btn btn-success" ID="btnAdd" runat="server" Width="110px" data-toggle="modal" data-target="#addCompanyModal"><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Add</asp:LinkButton>&nbsp;&nbsp;                
+                <asp:LinkButton CssClass="btn btn-danger" ID="btnDelete" runat="server" Width="110px" data-toggle="modal" data-target="#deleteCompanyModal"><span class="fa fa-trash"></span>&nbsp;&nbsp;Delete</asp:LinkButton>                
+            </div>
         </div>
-    </div>
-    <div class="container">
         <div class="row">
-            <div class="col-sm-11 table-responsive">
+            <div class="col-sm-12 table-responsive">
                 <asp:GridView CssClass="table table-bordered table-hover" ID="GridViewDrugCompanies" runat="server" AutoGenerateColumns="False" CellPadding="3" DataKeyNames="companyId" DataSourceID="SqlDataSourceDrugCompanies" GridLines="Vertical" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="GridViewDrugCompanies_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="#DCDCDC" />
                     <Columns>
@@ -19,7 +30,7 @@
                         <asp:BoundField DataField="companyName" HeaderText="Company Name" SortExpression="companyName" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#105b85" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
                     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                     <SelectedRowStyle BackColor="Gray" Font-Bold="True" ForeColor="White" />
@@ -29,13 +40,7 @@
                     <SortedDescendingHeaderStyle BackColor="#000065" />
                 </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSourceDrugCompanies" runat="server" ConnectionString="<%$ ConnectionStrings:PharmacyConnectionString %>" SelectCommand="SELECT * FROM [DrugCompanies]"></asp:SqlDataSource>                
-            </div>
-            <div class="col-sm-1">
-                <asp:LinkButton CssClass="btn btn-success" ID="btnAdd" runat="server" Text="Add" Width="78px" data-toggle="modal" data-target="#addCompanyModal" /><br />
-                <br />                
-                <asp:LinkButton CssClass="btn btn-danger" ID="btnDelete" runat="server" Text="Delete" Width="78px" data-toggle="modal" data-target="#deleteCompanyModal" /><br />
-                <br />                
-            </div>
+            </div>            
         </div>
     </div>
 
@@ -43,7 +48,7 @@
     <div class="modal fade" id="addCompanyModal" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-success" style="background: linear-gradient(#2b2a2a, #5c5b5b); color: white">
+                <div class="modal-header bg-success" style="background: linear-gradient(#0a5b64, #139aa9); color: white">
                     <h5 class="modal-title">Add New Company</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white">
                         <span aria-hidden="true">&times;</span>
@@ -83,7 +88,7 @@
     <div class="modal fade" id="deleteCompanyModal" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-success" style="background: linear-gradient(#0a5b64, #139aa9); color: white">
                     <h5 class="modal-title">Delete Confirmation</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

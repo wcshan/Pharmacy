@@ -66,7 +66,7 @@
                         <asp:BoundField DataField="drugName" HeaderText="Drug Name" SortExpression="drugName" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#105b85" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
                     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                     <SelectedRowStyle BackColor="Gray" Font-Bold="True" ForeColor="White" />
@@ -78,11 +78,11 @@
                 <asp:SqlDataSource ID="SqlDataSourceDrugsList" runat="server" ConnectionString="<%$ ConnectionStrings:PharmacyConnectionString %>" SelectCommand="SELECT [drugId], [drugName] FROM [DrugsAndMedication]"></asp:SqlDataSource>
             </div>
             <div class="col-sm-2">
-                <asp:LinkButton CssClass="btn btn-success" ID="btnAdd" runat="server" Text="Add" Width="95px" data-toggle="modal" data-target="#inputModal" /><br />
+                <asp:LinkButton CssClass="btn btn-success" ID="btnAdd" runat="server" Width="140px" data-toggle="modal" data-target="#inputModal"><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Add</asp:LinkButton><br />
                 <br />
-                <asp:LinkButton CssClass="btn btn-danger" ID="btnDelete" runat="server" Text="Remove" Width="95px" data-toggle="modal" data-target="#removeModal" /><br />
+                <asp:LinkButton CssClass="btn btn-danger" ID="btnDelete" runat="server" Width="140px" data-toggle="modal" data-target="#removeModal"><span class="fa fa-trash"></span>&nbsp;&nbsp;Remove</asp:LinkButton><br />
                 <br />
-                <asp:LinkButton CssClass="btn btn-primary" ID="btnComplete" runat="server" Text="Complete" Width="95px" data-toggle="modal" data-target="#completeModal" />
+                <asp:LinkButton CssClass="btn btn-primary" ID="btnComplete" runat="server" Width="140px" data-toggle="modal" data-target="#completeModal"><span class="fa fa-globe"></span>&nbsp;&nbsp;Complete</asp:LinkButton>
             </div>
             <div class="col-sm-6 table-responsive">
                 <asp:GridView CssClass="table table-bordered table-hover" ID="GridViewDrugItems" runat="server" AutoGenerateColumns="False" CellPadding="3" DataKeyNames="drugId" GridLines="Vertical" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="GridViewDrugItems_SelectedIndexChanged">
@@ -95,7 +95,7 @@
                         <asp:BoundField DataField="instructions" HeaderText="Instructions" SortExpression="instructions" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#105b85" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
                     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                     <SelectedRowStyle BackColor="Gray" Font-Bold="True" ForeColor="White" />
@@ -112,9 +112,9 @@
     <div class="modal fade" id="inputModal" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-success" style="background: linear-gradient(#0a5b64, #139aa9); color: white">
                     <h5 class="modal-title">Input Details</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -159,7 +159,7 @@
     <div class="modal fade" id="removeModal" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-success" style="background: linear-gradient(#0a5b64, #139aa9); color: white">
                     <h5 class="modal-title">Delete Confirmation</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -183,7 +183,7 @@
     <div class="modal fade" id="completeModal" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-success" style="background: linear-gradient(#0a5b64, #139aa9); color: white">
                     <h5 class="modal-title">Complete Confirmation</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

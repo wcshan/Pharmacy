@@ -13,22 +13,31 @@ namespace Pharmacy.WebForms {
     public partial class PrescriptionsPage {
         
         /// <summary>
-        /// GridViewPrescriptions control.
+        /// ddSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewPrescriptions;
+        protected global::System.Web.UI.WebControls.DropDownList ddSearch;
         
         /// <summary>
-        /// SqlDataSourcePrescriptions control.
+        /// txSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourcePrescriptions;
+        protected global::System.Web.UI.WebControls.TextBox txSearch;
+        
+        /// <summary>
+        /// btnSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
         /// btnAdd control.
@@ -49,6 +58,15 @@ namespace Pharmacy.WebForms {
         protected global::System.Web.UI.WebControls.LinkButton btnUpdate;
         
         /// <summary>
+        /// btnDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnDelete;
+        
+        /// <summary>
         /// btnView control.
         /// </summary>
         /// <remarks>
@@ -56,6 +74,24 @@ namespace Pharmacy.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnView;
+        
+        /// <summary>
+        /// GridViewPrescriptions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        public global::System.Web.UI.WebControls.GridView GridViewPrescriptions;
+        
+        /// <summary>
+        /// SqlDataSourcePrescriptions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourcePrescriptions;
         
         /// <summary>
         /// panelDataView control.
@@ -74,5 +110,23 @@ namespace Pharmacy.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnClose;
+        
+        /// <summary>
+        /// lblDeletePrescriptionId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDeletePrescriptionId;
+        
+        /// <summary>
+        /// btnDeletePrescriptionSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeletePrescriptionSubmit;
     }
 }

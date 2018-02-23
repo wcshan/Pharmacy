@@ -7,6 +7,8 @@ using System.Web;
 using System.Windows.Forms;
 using Pharmacy.WebForms;
 using System.Web.UI;
+using System.Data;
+using System.Web.UI.WebControls;
 
 namespace Pharmacy.Classes
 {
@@ -165,6 +167,40 @@ namespace Pharmacy.Classes
                 cmd.ExecuteNonQuery();
                 DB.closeConnection();
                 ScriptManager.RegisterClientScriptBlock(deleteCustomer, this.GetType(), "SweetAlert", "swal('Success!', 'Customer Deleted', 'success').then(function(){window.location='CustomersPage.aspx';})", true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+        }
+
+        public void SearchCustomer(System.Web.UI.WebControls.TextBox txCustomerSearch, DropDownList ddCustomerSearch, GridView GridViewCustomers)
+        {
+            try
+            {
+                DatabaseConnection DB = new DatabaseConnection();
+                DB.openConnection();
+                string selectQuery = null;
+                string vSearchValue = '%' + txCustomerSearch.Text + '%';
+
+                switch (ddCustomerSearch.SelectedIndex)
+                {
+                    case 0:
+                        selectQuery = "SELECT * FROM Customers WHERE customerId LIKE '" + vSearchValue + "'";
+                        break;
+
+                    case 1:
+                        selectQuery = "SELECT * FROM Customers WHERE customerName LIKE '" + vSearchValue + "'";
+                        break;                    
+                }
+                var dataAdapter = new SqlDataAdapter(selectQuery, DatabaseConnection.dbConnection);
+                var DS = new DataSet();
+                dataAdapter.Fill(DS);
+                GridViewCustomers.DataSourceID = null;
+                GridViewCustomers.DataSource = DS.Tables[0];
+                GridViewCustomers.DataBind();
+                DB.closeConnection();
+                txCustomerSearch.Text = "";
             }
             catch (Exception ex)
             {

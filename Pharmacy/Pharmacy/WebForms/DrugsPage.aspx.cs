@@ -48,5 +48,11 @@ namespace Pharmacy.WebForms
             lblDeleteDrugId.Text = GridViewDrugs.SelectedRow.Cells[1].Text;
             lblDeleteDrugName.Text = GridViewDrugs.SelectedRow.Cells[3].Text;
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            ClassDrug searchDrug = new ClassDrug();
+            searchDrug.SearchDrug(txSearch, ddSearch, GridViewDrugs);
+        }
     }
 }

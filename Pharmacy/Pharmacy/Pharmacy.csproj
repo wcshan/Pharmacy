@@ -87,6 +87,7 @@
     <Content Include="WebForms\Bootstrap\web-fonts-with-css\webfonts\fa-solid-900.svg" />
     <Content Include="WebForms\DrugCompaniesPage.aspx" />
     <Content Include="WebForms\DrugsPage.aspx" />
+    <Content Include="WebForms\Images\logo.png" />
     <Content Include="WebForms\LoginPage.aspx" />
     <Content Include="WebForms\NewPrescriptionPage.aspx" />
     <Content Include="WebForms\PhysiciansPage.aspx" />

@@ -2,10 +2,12 @@
 using Pharmacy.WebForms;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace Pharmacy.Classes
@@ -158,6 +160,40 @@ namespace Pharmacy.Classes
                 cmd.ExecuteNonQuery();
                 DB.closeConnection();
                 ScriptManager.RegisterClientScriptBlock(deletePhysician, this.GetType(), "SweetAlert", "swal('Success!', 'Physician Deleted', 'success').then(function(){window.location='PhysiciansPage.aspx';})", true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+        }
+
+        public void SearchPhysician(System.Web.UI.WebControls.TextBox txSearch, DropDownList ddSearch, GridView GridViewSearch)
+        {
+            try
+            {
+                DatabaseConnection DB = new DatabaseConnection();
+                DB.openConnection();
+                string selectQuery = null;
+                string vSearchValue = '%'+ txSearch.Text + '%';
+
+                switch (ddSearch.SelectedIndex)
+                {
+                    case 0:
+                        selectQuery = "SELECT * FROM Physicians WHERE physicianId LIKE '" + vSearchValue + "'";
+                        break;
+
+                    case 1:
+                        selectQuery = "SELECT * FROM Physicians WHERE physicianName LIKE '" + vSearchValue + "'";
+                        break;
+                }
+                var dataAdapter = new SqlDataAdapter(selectQuery, DatabaseConnection.dbConnection);
+                var DS = new DataSet();
+                dataAdapter.Fill(DS);
+                GridViewSearch.DataSourceID = null;
+                GridViewSearch.DataSource = DS.Tables[0];
+                GridViewSearch.DataBind();
+                DB.closeConnection();
+                txSearch.Text = "";
             }
             catch (Exception ex)
             {

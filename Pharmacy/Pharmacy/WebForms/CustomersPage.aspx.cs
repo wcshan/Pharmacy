@@ -55,6 +55,12 @@ namespace Pharmacy.WebForms
         {
             ClassCustomer deleteCustomer = new ClassCustomer();
             deleteCustomer.DeleteCustomer(this);
-        }        
+        }
+
+        protected void btnCustomerSearch_Click(object sender, EventArgs e)
+        {
+            ClassCustomer searchCustomer = new ClassCustomer();
+            searchCustomer.SearchCustomer(txCustomerSearch, ddCustomerSearch, GridViewCustomers);
+        }
     }
 }

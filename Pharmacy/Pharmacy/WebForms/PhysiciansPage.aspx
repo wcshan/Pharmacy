@@ -5,13 +5,26 @@
 
 <asp:Content ID="body" ContentPlaceHolderID="contentbody" runat="server">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12" style="height: 10px"></div>
+        <div class="row" style="margin-bottom:10px; margin-top:20px">
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <asp:DropDownList CssClass="btn-success" runat="server" ID="ddPhysicianSearch" Width="100px">
+                        <asp:ListItem>ID</asp:ListItem>
+                        <asp:ListItem>Name</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:TextBox CssClass="form-control" runat="server" ID="txPhysicianSearch" placeholder="Search Text" BackColor="#eaeaea"></asp:TextBox>
+                    <asp:Button runat="server" CssClass="btn-success" Text="   Search   " ID="btnPhysicianSearch" OnClick="btnPhysicianSearch_Click" />
+                </div>
+            </div>
+            <div class="col-sm-6 text-right">
+                <asp:LinkButton CssClass="btn btn-success" ID="btnAdd" runat="server" Width="110px" data-toggle="modal" data-target="#addPhysicianModal"><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Add</asp:LinkButton>&nbsp;&nbsp;                
+                <asp:LinkButton CssClass="btn btn-warning" ID="btnUpdate" runat="server" Width="110px" data-toggle="modal" data-target="#updatePhysicianModal"><span class="fa fa-edit"></span>&nbsp;&nbsp;Update</asp:LinkButton>&nbsp;&nbsp;                
+                <asp:LinkButton CssClass="btn btn-danger" ID="btnDelete" runat="server" Width="110px" data-toggle="modal" data-target="#deletePhysicianModal"><span class="fa fa-trash"></span>&nbsp;&nbsp;Delete</asp:LinkButton>&nbsp;&nbsp;                
+                <asp:LinkButton CssClass="btn btn-primary" ID="btnAddress" runat="server" Width="110px" data-toggle="modal" data-target="#viewAddressModal"><span class="fa fa-globe"></span>&nbsp;&nbsp;Address</asp:LinkButton>
+            </div>
         </div>
-    </div>
-    <div class="container">
         <div class="row">
-            <div class="col-sm-11 table-responsive">
+            <div class="col-sm-12 table-responsive">
                 <asp:GridView CssClass="table table-bordered table-hover" ID="GridViewPhysicians" runat="server" AutoGenerateColumns="False" CellPadding="3" DataKeyNames="physicianId" DataSourceID="SqlDataSourcePhysicians" GridLines="Vertical" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="GridViewPhysicians_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="#DCDCDC" />
                     <Columns>
@@ -21,7 +34,7 @@
                         <asp:BoundField DataField="physicianName" HeaderText="Physician Name" SortExpression="physicianName" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#105b85" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
                     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                     <SelectedRowStyle BackColor="Gray" Font-Bold="True" ForeColor="White" />
@@ -31,16 +44,7 @@
                     <SortedDescendingHeaderStyle BackColor="#000065" />
                 </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSourcePhysicians" runat="server" ConnectionString="<%$ ConnectionStrings:PharmacyConnectionString %>" SelectCommand="SELECT * FROM [Physicians]"></asp:SqlDataSource>
-            </div>
-            <div class="col-sm-1">
-                <asp:LinkButton CssClass="btn btn-success" ID="btnAdd" runat="server" Text="Add" Width="78px" data-toggle="modal" data-target="#addPhysicianModal" /><br />
-                <br />
-                <asp:LinkButton CssClass="btn btn-warning" ID="btnUpdate" runat="server" Text="Update" Width="78px" data-toggle="modal" data-target="#updatePhysicianModal" /><br />
-                <br />
-                <asp:LinkButton CssClass="btn btn-danger" ID="btnDelete" runat="server" Text="Delete" Width="78px" data-toggle="modal" data-target="#deletePhysicianModal" /><br />
-                <br />
-                <asp:LinkButton CssClass="btn btn-primary" ID="btnAddress" runat="server" Text="Address" Width="78px" data-toggle="modal" data-target="#viewAddressModal" />
-            </div>
+            </div>            
         </div>
     </div>
 
@@ -48,7 +52,7 @@
     <div class="modal fade" id="addPhysicianModal" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-success" style="background: linear-gradient(#2b2a2a, #5c5b5b); color: white">
+                <div class="modal-header bg-success" style="background: linear-gradient(#0a5b64, #139aa9); color: white">
                     <h5 class="modal-title">Add New Physician</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white">
                         <span aria-hidden="true">&times;</span>
@@ -184,7 +188,7 @@
     <div class="modal fade" id="updatePhysicianModal" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-success" style="background: linear-gradient(#2b2a2a, #5c5b5b); color: white">
+                <div class="modal-header bg-success" style="background: linear-gradient(#0a5b64, #139aa9); color: white">
                     <h5 class="modal-title">Update Physician</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white">
                         <span aria-hidden="true">&times;</span>
@@ -294,7 +298,7 @@
     <div class="modal fade" id="viewAddressModal" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-success" style="background: linear-gradient(#2b2a2a, #5c5b5b); color: white">
+                <div class="modal-header bg-success" style="background: linear-gradient(#0a5b64, #139aa9); color: white">
                     <h5 class="modal-title">View Address</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white">
                         <span aria-hidden="true">&times;</span>
@@ -377,7 +381,7 @@
     <div class="modal fade" id="deletePhysicianModal" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-success" style="background: linear-gradient(#0a5b64, #139aa9); color: white">
                     <h5 class="modal-title">Delete Confirmation</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

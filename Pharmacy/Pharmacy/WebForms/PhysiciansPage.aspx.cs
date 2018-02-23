@@ -56,5 +56,11 @@ namespace Pharmacy.WebForms
             ClassPhysician deletePhysician = new ClassPhysician();
             deletePhysician.DeletePhysician(this);
         }
+
+        protected void btnPhysicianSearch_Click(object sender, EventArgs e)
+        {
+            ClassPhysician searchPhysician = new ClassPhysician();
+            searchPhysician.SearchPhysician(txPhysicianSearch, ddPhysicianSearch, GridViewPhysicians);
+        }
     }
 }

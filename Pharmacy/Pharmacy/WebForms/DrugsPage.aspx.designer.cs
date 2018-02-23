@@ -13,22 +13,31 @@ namespace Pharmacy.WebForms {
     public partial class DrugsPage {
         
         /// <summary>
-        /// GridViewDrugs control.
+        /// ddSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        public global::System.Web.UI.WebControls.GridView GridViewDrugs;
+        protected global::System.Web.UI.WebControls.DropDownList ddSearch;
         
         /// <summary>
-        /// SqlDataSourceDrugs control.
+        /// txSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceDrugs;
+        protected global::System.Web.UI.WebControls.TextBox txSearch;
+        
+        /// <summary>
+        /// btnSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
         /// btnAdd control.
@@ -56,6 +65,24 @@ namespace Pharmacy.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnDelete;
+        
+        /// <summary>
+        /// GridViewDrugs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        public global::System.Web.UI.WebControls.GridView GridViewDrugs;
+        
+        /// <summary>
+        /// SqlDataSourceDrugs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceDrugs;
         
         /// <summary>
         /// lbl1 control.
@@ -299,7 +326,7 @@ namespace Pharmacy.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-
+        
         /// <summary>
         /// ddUpdateDrugCompanyId control.
         /// </summary>

@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="Bootstrap/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="Bootstrap/css/bootstrap-reboot.min.css" />
-    <link rel="stylesheet" href="Bootstrap/web-fonts-with-css/css/fontawesome-all.min.css"/>
+    <link rel="stylesheet" href="Bootstrap/web-fonts-with-css/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="Bootstrap/css/sidebar.css" />
     <script src="Bootstrap/js/sweetalert.min.js"></script>
-    
+
     <asp:ContentPlaceHolder ID="contentHead" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -19,30 +20,37 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="card card-body bg-dark">
-                        <h3 style="text-align:center; font-size:30px; font-family:'Trajan Pro'" class="text-light">NEW PHARMACY</h3>
+                    <div class="row" style="background: linear-gradient(#032e38, #108ba8)">
+                        <div class="col-sm-2">
+                            <img src="Images/logo.png" />
+                        </div>
+                        <div class="col-sm-10" style="padding-top: 20px; padding-left: 100px">
+                            <h3 style="text-align: center; text-shadow: 2px 2px #000000; color: #35aa08; display: inline; font-size: 70px; font-family: Milkshake">Health</h3>
+                            <h3 style="text-align: center; text-shadow: 2px 2px #000000; color: #095c9a; display: inline; font-size: 70px; font-family: Milkshake">Care</h3>
+                            <h3 style="text-align: center; display: inline; font-size: 20px; font-family: 'Trajan Pro'" class="text-light">PHARMACY</h3>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid" style="margin-top:10px">
+        <div class="container-fluid" style="margin-top: 10px">
             <div class="row">
-                <div class="col-sm-2">                    
-                        <div class="list-group">
-                            <a href="CustomersPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-user" style="font-size:18px">&nbsp;&nbsp;Customers</a>
-                            <a href="PhysiciansPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-user-md" style="font-size:18px">&nbsp;&nbsp;Physicians</a>
-                            <a href="DrugCompaniesPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-building" style="font-size:18px">&nbsp;&nbsp;Drug Companies</a>
-                            <a href="DrugsPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-medkit" style="font-size:18px">&nbsp;&nbsp;Drugs</a>
-                            <a href="PrescriptionsPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-sticky-note" style="font-size:18px">&nbsp;&nbsp;Prescriptions</a>
-                            <a href="LoginPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-sign-out-alt" style="font-size:18px">&nbsp;&nbsp;Logout</a>
-                        </div>                    
+                <div class="col-sm-2">
+                    <div class="list-group">
+                        <a href="CustomersPage.aspx" class="list-group-item list-group-item-action list-group-item-primary fa fa-user" style="font-size: 18px">&nbsp;&nbsp;Customers</a>
+                        <a href="PhysiciansPage.aspx" class="list-group-item list-group-item-action list-group-item-success fa fa-user-md" style="font-size: 18px">&nbsp;&nbsp;Physicians</a>
+                        <a href="DrugCompaniesPage.aspx" class="list-group-item list-group-item-action list-group-item-primary fa fa-building" style="font-size: 18px">&nbsp;&nbsp;Drug Companies</a>
+                        <a href="DrugsPage.aspx" class="list-group-item list-group-item-action list-group-item-success fa fa-medkit" style="font-size: 18px">&nbsp;&nbsp;Drugs</a>
+                        <a href="PrescriptionsPage.aspx" class="list-group-item list-group-item-action list-group-item-primary fa fa-sticky-note" style="font-size: 18px">&nbsp;&nbsp;Prescriptions</a>
+                        <a href="LoginPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-sign-out-alt" style="font-size: 18px">&nbsp;&nbsp;Logout</a>
+                    </div>
                 </div>
                 <div class="col-sm-10">
                     <asp:ContentPlaceHolder ID="contentBody" runat="server"></asp:ContentPlaceHolder>
                 </div>
             </div>
         </div>
-                
+
     </form>
     <script src="Bootstrap/js/jquery.min.js"></script>
     <script src="Bootstrap/js/bootstrap.min.js"></script>

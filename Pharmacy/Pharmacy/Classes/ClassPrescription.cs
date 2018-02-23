@@ -237,6 +237,68 @@ namespace Pharmacy.Classes
                 MessageBox.Show("Error" + ex);
             }
         }
+
+        public void SearchPrescription(System.Web.UI.WebControls.TextBox txSearch, DropDownList ddSearch, GridView GridViewSearch)
+        {
+            try
+            {
+                DatabaseConnection DB = new DatabaseConnection();
+                DB.openConnection();
+                string selectQuery = null;
+                string vSearchValue = '%' + txSearch.Text + '%';
+
+                switch (ddSearch.SelectedIndex)
+                {
+                    case 0:
+                        selectQuery = "SELECT t1.prescriptionId, t1.customerId, t1.physicianId, t1.statusCode, t1.paymentMethodCode, t1.issuedDate, t1.filledDate, t2.customerName, t4.physicianName, t3.paymentMethod, t5.statusDescription FROM Prescriptions AS t1 LEFT JOIN Customers AS t2 ON t2.customerId = t1.customerId LEFT JOIN PaymentMethods AS t3 ON t1.paymentMethodCode = t3.paymentMethodCode LEFT JOIN Physicians AS t4 ON t1.physicianId = t4.physicianId LEFT JOIN PrescriptionStatus AS t5 ON t1.statusCode = t5.prescriptionStatuscode WHERE t1.prescriptionId LIKE '" + vSearchValue + "'";
+                        break;
+
+                    case 1:
+                        selectQuery = "SELECT t1.prescriptionId, t1.customerId, t1.physicianId, t1.statusCode, t1.paymentMethodCode, t1.issuedDate, t1.filledDate, t2.customerName, t4.physicianName, t3.paymentMethod, t5.statusDescription FROM Prescriptions AS t1 LEFT JOIN Customers AS t2 ON t2.customerId = t1.customerId LEFT JOIN PaymentMethods AS t3 ON t1.paymentMethodCode = t3.paymentMethodCode LEFT JOIN Physicians AS t4 ON t1.physicianId = t4.physicianId LEFT JOIN PrescriptionStatus AS t5 ON t1.statusCode = t5.prescriptionStatuscode WHERE t2.customerName LIKE '" + vSearchValue + "'";
+                        break;
+                    case 2:
+                        selectQuery = "SELECT t1.prescriptionId, t1.customerId, t1.physicianId, t1.statusCode, t1.paymentMethodCode, t1.issuedDate, t1.filledDate, t2.customerName, t4.physicianName, t3.paymentMethod, t5.statusDescription FROM Prescriptions AS t1 LEFT JOIN Customers AS t2 ON t2.customerId = t1.customerId LEFT JOIN PaymentMethods AS t3 ON t1.paymentMethodCode = t3.paymentMethodCode LEFT JOIN Physicians AS t4 ON t1.physicianId = t4.physicianId LEFT JOIN PrescriptionStatus AS t5 ON t1.statusCode = t5.prescriptionStatuscode WHERE t4.physicianName LIKE '" + vSearchValue + "'";
+                        break;
+                }
+                var dataAdapter = new SqlDataAdapter(selectQuery, DatabaseConnection.dbConnection);
+                var DS = new DataSet();
+                dataAdapter.Fill(DS);
+                GridViewSearch.DataSourceID = null;
+                GridViewSearch.DataSource = DS.Tables[0];
+                GridViewSearch.DataBind();
+                DB.closeConnection();
+                txSearch.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+        }
+
+        public void DeletePrescription(PrescriptionsPage deletPrescription)
+        {
+            try
+            {
+                DatabaseConnection DB = new DatabaseConnection();
+                DB.openConnection();
+
+                vPrescriptionId = deletPrescription.GridViewPrescriptions.SelectedRow.Cells[1].Text;
+                string sqlDeleteCom = "DELETE FROM PrescriptionItems WHERE prescriptionId = '" + vPrescriptionId + "'";
+                SqlCommand com = new SqlCommand(sqlDeleteCom, DatabaseConnection.dbConnection);
+                com.ExecuteNonQuery();
+
+                string sqlDeleteCmd = "DELETE FROM Prescriptions WHERE prescriptionId = '" + vPrescriptionId + "'";
+                SqlCommand cmd = new SqlCommand(sqlDeleteCmd, DatabaseConnection.dbConnection);
+                cmd.ExecuteNonQuery();                
+
+                DB.closeConnection();
+                ScriptManager.RegisterClientScriptBlock(deletPrescription, this.GetType(), "SweetAlert", "swal('Success!', 'Prescription Deleted', 'success').then(function(){window.location='PrescriptionsPage.aspx';})", true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+        }
     }
 }
 

@@ -37,5 +37,11 @@ namespace Pharmacy.WebForms
             lblDeleteCompanyId.Text = GridViewDrugCompanies.SelectedRow.Cells[1].Text;
             lblDeleteCompanyName.Text = GridViewDrugCompanies.SelectedRow.Cells[2].Text;
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            ClassDrugCompany searchCompany = new ClassDrugCompany();
+            searchCompany.SearchDrugCompany(txSearch, ddSearch, GridViewDrugCompanies);
+        }
     }
 }
