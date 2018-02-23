@@ -72,6 +72,8 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="WebForms\Bootstrap\css\login.css" />
+    <Content Include="WebForms\Bootstrap\css\navbar.css" />
+    <Content Include="WebForms\Bootstrap\js\navbar.js" />
     <Content Include="WebForms\Bootstrap\web-fonts-with-css\css\fa-brands.css" />
     <Content Include="WebForms\Bootstrap\web-fonts-with-css\css\fa-brands.min.css" />
     <Content Include="WebForms\Bootstrap\web-fonts-with-css\css\fa-regular.css" />
