@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PharmacyMaster.master.cs" Inherits="Pharmacy.WebForms.PharmacyMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="Bootstrap/web-fonts-with-css/css/fontawesome-all.min.css"/>
+    <script src="Bootstrap/js/sweetalert.min.js"></script>
+    
+    <asp:ContentPlaceHolder ID="contentHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card card-body bg-dark">
+                        <h3 style="text-align:center; font-size:30px; font-family:'Trajan Pro'" class="text-light">PHARMACY</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="margin-top:10px">
+            <div class="row">
+                <div class="col-sm-2">                    
+                        <div class="list-group">
+                            <a href="CustomersPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-user" style="font-size:18px">&nbsp;&nbsp;Customers</a>
+                            <a href="PhysiciansPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-user-md" style="font-size:18px">&nbsp;&nbsp;Physicians</a>
+                            <a href="DrugCompaniesPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-building" style="font-size:18px">&nbsp;&nbsp;Drug Companies</a>
+                            <a href="DrugsPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-medkit" style="font-size:18px">&nbsp;&nbsp;Drugs</a>
+                            <a href="PrescriptionsPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-sticky-note" style="font-size:18px">&nbsp;&nbsp;Prescriptions</a>
+                            <a href="LoginPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-sign-out-alt" style="font-size:18px">&nbsp;&nbsp;Logout</a>
+                        </div>                    
+                </div>
+                <div class="col-sm-10">
+                    <asp:ContentPlaceHolder ID="contentBody" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+                
+    </form>
+    <script src="Bootstrap/js/jquery.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
