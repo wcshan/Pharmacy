@@ -50,7 +50,7 @@
             </div>
         </div>
     </div>
-    <hr style="height: 2px; background-color: black" />
+    <hr style="height: 2px; background-color: black; width:1100px;" />
 
     <div class="container">
         <div class="row">

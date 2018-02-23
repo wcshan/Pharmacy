@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="Bootstrap/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="Bootstrap/css/bootstrap-reboot.min.css" />
     <link rel="stylesheet" href="Bootstrap/web-fonts-with-css/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="Bootstrap/css/sidebar.css" />
+    <link rel="stylesheet" href="Bootstrap/css/navbar.css" />
     <script src="Bootstrap/js/sweetalert.min.js"></script>
 
     <asp:ContentPlaceHolder ID="contentHead" runat="server">
@@ -17,7 +17,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container-fluid">
+        <div class="container-fluid" style="position: fixed; top: 0; z-index: 999">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row" style="background: linear-gradient(#032e38, #108ba8)">
@@ -33,19 +33,60 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid" style="margin-top: 10px">
-            <div class="row">
-                <div class="col-sm-2">
-                    <div class="list-group">
+        <div class="container-fluid" style="margin-top: 123px">
+            <div class="row" style="min-height: 500px">
+                <div class="" style="position: fixed; width: 12%">
+                    <div class="left" style="background: linear-gradient(#074a5a, #787272)">
+                        <ul>
+                            <a href="CustomersPage.aspx">
+                                <li class="item-menu">                                    
+                                    <span class="fa fa-user fa-2x"></span>
+                                    <span class="menu">Customers</span>
+                                </li>
+                            </a>
+                            <a href="PhysiciansPage.aspx">
+                                <li class="item-menu">
+                                    <span class="fa fa-user-md fa-2x"></span>
+                                    <span class="menu">Physicians</span>
+                                </li>
+                            </a>
+                            <a href="DrugCompaniesPage.aspx">
+                                <li class="item-menu">
+                                    <span class="fa fa-building fa-2x"></span>
+                                    <span class="menu">Drug Companies</span>
+                                </li>
+                            </a>
+                            <a href="DrugsPage.aspx">
+                                <li class="item-menu">
+                                    <span class="fa fa-medkit fa-2x"></span>
+                                    <span class="menu">Drugs</span>
+                                </li>
+                            </a>
+                            <a href="PrescriptionsPage.aspx">
+                                <li class="item-menu">
+                                    <span class="fa fa-sticky-note fa-2x"></span>
+                                    <span class="menu">Prescriptions</span>
+                                </li>
+                            </a>
+                            <a href="LoginPage.aspx">
+                                <li class="item-menu" style="margin-top:80px">
+                                    <span class="fa fa-sign-out-alt fa-2x"></span>
+                                    <span class="menu">Logout</span>
+                                </li>
+                            </a>                            
+                        </ul>
+                    </div>
+                    <!-- end left -->
+                    <%--<div class="list-group">
                         <a href="CustomersPage.aspx" class="list-group-item list-group-item-action list-group-item-primary fa fa-user" style="font-size: 18px">&nbsp;&nbsp;Customers</a>
                         <a href="PhysiciansPage.aspx" class="list-group-item list-group-item-action list-group-item-success fa fa-user-md" style="font-size: 18px">&nbsp;&nbsp;Physicians</a>
                         <a href="DrugCompaniesPage.aspx" class="list-group-item list-group-item-action list-group-item-primary fa fa-building" style="font-size: 18px">&nbsp;&nbsp;Drug Companies</a>
                         <a href="DrugsPage.aspx" class="list-group-item list-group-item-action list-group-item-success fa fa-medkit" style="font-size: 18px">&nbsp;&nbsp;Drugs</a>
                         <a href="PrescriptionsPage.aspx" class="list-group-item list-group-item-action list-group-item-primary fa fa-sticky-note" style="font-size: 18px">&nbsp;&nbsp;Prescriptions</a>
                         <a href="LoginPage.aspx" class="list-group-item list-group-item-action list-group-item-dark fa fa-sign-out-alt" style="font-size: 18px">&nbsp;&nbsp;Logout</a>
-                    </div>
+                    </div>--%>
                 </div>
-                <div class="col-sm-10">
+                <div class="" style="height: auto; position: absolute; width: 88%; right: 0; transition:0.5s">
                     <asp:ContentPlaceHolder ID="contentBody" runat="server"></asp:ContentPlaceHolder>
                 </div>
             </div>
