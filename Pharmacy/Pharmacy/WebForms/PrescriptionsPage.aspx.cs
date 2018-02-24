@@ -16,7 +16,13 @@ namespace Pharmacy.WebForms
             {
                 ClassPrescription loadData = new ClassPrescription();
                 loadData.LoadPrescriptionData(GridViewPrescriptions);
-            }            
+            }
+            System.Web.UI.HtmlControls.HtmlGenericControl li = (System.Web.UI.HtmlControls.HtmlGenericControl)this.Page.Master.FindControl("liPrescription");
+            System.Web.UI.HtmlControls.HtmlGenericControl span1 = (System.Web.UI.HtmlControls.HtmlGenericControl)this.Page.Master.FindControl("spanPrescription1");
+            System.Web.UI.HtmlControls.HtmlGenericControl span2 = (System.Web.UI.HtmlControls.HtmlGenericControl)this.Page.Master.FindControl("spanPrescription2");
+            li.Attributes.Add("class", "item-menu active-menu");
+            span1.Attributes.Add("class", "fa fa-sticky-note fa-2x active-span");
+            span2.Attributes.Add("class", "menu active-span");
 
             btnUpdate.CssClass = "btn btn-warning disabled";
             btnView.CssClass = "btn btn-primary disabled";

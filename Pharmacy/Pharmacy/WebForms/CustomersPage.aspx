@@ -5,12 +5,18 @@
 
 <asp:Content ID="body" ContentPlaceHolderID="contentbody" runat="server">
     <div class="container">
-        <div class="row" style="margin-bottom:10px; margin-top:20px">
+        <div class="row" style="margin-top: 10px">
+            <div class="col-sm-12">
+                <h2 style="font-family: Rockwell; text-align: center; color: #0a5b64;">Customers</h2>
+            </div>
+        </div>
+        <hr style="height: 2px; background-color: #0a5b64; width: 1100px;" />
+        <div class="row" style="margin-bottom: 10px; margin-top: 20px">
             <div class="col-sm-6">
                 <div class="input-group">
                     <asp:DropDownList CssClass="btn-success" runat="server" ID="ddCustomerSearch" Width="100px">
                         <asp:ListItem>ID</asp:ListItem>
-                        <asp:ListItem>Name</asp:ListItem>                        
+                        <asp:ListItem>Name</asp:ListItem>
                     </asp:DropDownList>
                     <asp:TextBox CssClass="form-control" runat="server" ID="txCustomerSearch" placeholder="Search Text" BackColor="#eaeaea"></asp:TextBox>
                     <asp:Button runat="server" CssClass="btn-success" Text="   Search   " ID="btnCustomerSearch" OnClick="btnCustomerSearch_Click" />
@@ -20,7 +26,7 @@
                 <asp:LinkButton CssClass="btn btn-success" ID="btnAdd" runat="server" Width="110px" data-toggle="modal" data-target="#addCustomerModal"><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Add</asp:LinkButton>&nbsp;&nbsp;                
                 <asp:LinkButton CssClass="btn btn-warning" ID="btnUpdate" runat="server" Width="110px" data-toggle="modal" data-target="#updateCustomerModal"><span class="fa fa-edit"></span>&nbsp;&nbsp;Update</asp:LinkButton>&nbsp;&nbsp;                
                 <asp:LinkButton CssClass="btn btn-danger" ID="btnDelete" runat="server" Width="110px" data-toggle="modal" data-target="#deleteCustomerModal"><span class="fa fa-trash"></span>&nbsp;&nbsp;Delete</asp:LinkButton>&nbsp;&nbsp;                
-                <asp:LinkButton CssClass="btn btn-primary" ID="btnAddress" runat="server" Width="110px" data-toggle="modal" data-target="#viewAddressModal"><span class="fa fa-globe"></span>&nbsp;&nbsp;Address</asp:LinkButton> 
+                <asp:LinkButton CssClass="btn btn-primary" ID="btnAddress" runat="server" Width="110px" data-toggle="modal" data-target="#viewAddressModal"><span class="fa fa-globe"></span>&nbsp;&nbsp;Address</asp:LinkButton>
             </div>
         </div>
         <div class="row">
@@ -49,7 +55,7 @@
                     <SortedDescendingHeaderStyle BackColor="#000065" />
                 </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSourceCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:PharmacyConnectionString %>" SelectCommand="SELECT * FROM [Customers]"></asp:SqlDataSource>
-            </div>            
+            </div>
         </div>
     </div>
 

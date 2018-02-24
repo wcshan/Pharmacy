@@ -12,6 +12,13 @@ namespace Pharmacy.WebForms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            System.Web.UI.HtmlControls.HtmlGenericControl li = (System.Web.UI.HtmlControls.HtmlGenericControl)this.Page.Master.FindControl("liCustomer");
+            System.Web.UI.HtmlControls.HtmlGenericControl span1 = (System.Web.UI.HtmlControls.HtmlGenericControl)this.Page.Master.FindControl("spanCustomer1");
+            System.Web.UI.HtmlControls.HtmlGenericControl span2 = (System.Web.UI.HtmlControls.HtmlGenericControl)this.Page.Master.FindControl("spanCustomer2");
+            li.Attributes.Add("class", "item-menu active-menu");
+            span1.Attributes.Add("class", "fa fa-user fa-2x active-span");
+            span2.Attributes.Add("class", "menu active-span");
+
             ClassCustomer generateCusId = new ClassCustomer();
             txCustomerId.Text = generateCusId.GenerateCustomerId();
 

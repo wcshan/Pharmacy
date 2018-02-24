@@ -4,6 +4,12 @@
 
 <asp:Content ID="body" ContentPlaceHolderID="contentbody" runat="server">
     <div class="container">
+        <div class="row" style="margin-top: 10px">
+            <div class="col-sm-12">
+                <h2 style="font-family: Rockwell; text-align: center; color: #0a5b64;">Drug Companies</h2>
+            </div>
+        </div>
+        <hr style="height: 2px; background-color: #0a5b64; width: 1100px;" />
         <div class="row" style="margin-bottom:10px; margin-top:20px">
             <div class="col-sm-6">
                 <div class="input-group">

@@ -16,7 +16,7 @@
 		width: auto;
 		height: 60px;
 		line-height: 50px;  
-		padding-left: 18px;                        
+		padding-left: 22px;                        
 	}
 	.left li:hover {
 		background: #192f34;             
@@ -36,16 +36,16 @@
 		color: white;
 	    text-decoration: none;
 	    font-weight: 600;
-	} 
+	}
+     
 	span.menu{
-		padding-left: 24px;
+		padding-left: 21px;
 	}
 
-    .item-menu:active{
-        background: #084958;
+    .active-menu{
+        background-color:#e0e0e0;
     }
 
-    .li:active a:active left:active item-menu:active{
-        background-color:#084958;
+    .active-span{
+        color:#2f8093;
     }
-
